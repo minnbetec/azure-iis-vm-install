@@ -1,0 +1,10 @@
+$publicSettings = @{ "fileUris" = (,"https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/appgatewayurl.ps1");  "commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File appgatewayurl.ps1" }
+    Set-AzVMExtension `
+     -ResourceGroupName ag-rg `
+     -Location eastus `
+     -ExtensionName IIS `
+     -VMName vm1 `
+     -Publisher Microsoft.Compute `
+     -ExtensionType CustomScriptExtension `
+     -TypeHandlerVersion 1.4 `
+     -Settings $publicSettings
